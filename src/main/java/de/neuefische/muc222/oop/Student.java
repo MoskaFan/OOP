@@ -1,5 +1,7 @@
 package de.neuefische.muc222.oop;
 
+import java.util.Objects;
+
 public class Student {
     private String name;
     private int studentId;
@@ -37,8 +39,6 @@ public class Student {
         return studentAddress;
     }
 
-
-
     @Override
     public String toString() {
         return "Student{" +
@@ -46,5 +46,18 @@ public class Student {
                 ", studentId=" + studentId +
                 ", studentAddress='" + studentAddress + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId && name.equals(student.name) && studentAddress.equals(student.studentAddress);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, studentId, studentAddress);
     }
 }
