@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Student {
     private String name;
-    private int studentId;
+    private int id;
     private String studentAddress;
     public Student() {
 
@@ -19,9 +19,15 @@ public class Student {
         this.studentAddress = studentAddress;
     }
 
-    public Student(String name, int studentId, String studentAddress) {
+    public Student(String name, int id) {
         this.name = name;
-        this.studentId = studentId;
+        this.id = id;
+
+    }
+
+    public Student(String name, int id, String studentAddress) {
+        this.name = name;
+        this.id = id;
         this.studentAddress = studentAddress;
     }
 
@@ -30,8 +36,8 @@ public class Student {
     }
 
 
-    public int getStudentId() {
-        return studentId;
+    public int getId() {
+        return id;
     }
 
 
@@ -43,7 +49,7 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
-                ", studentId=" + studentId +
+                ", studentId=" + id +
                 ", studentAddress='" + studentAddress + '\'' +
                 '}';
     }
@@ -53,11 +59,11 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return studentId == student.studentId && name.equals(student.name) && studentAddress.equals(student.studentAddress);
+        return id == student.id && name.equals(student.name) && studentAddress.equals(student.studentAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, studentId, studentAddress);
+        return Objects.hash(name, id, studentAddress);
     }
 }
