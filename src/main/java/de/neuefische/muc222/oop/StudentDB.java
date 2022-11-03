@@ -15,6 +15,11 @@ public class StudentDB {
         students.add(newStudent);
     }
 
+    public void removeStudent(Student newStudent){
+
+        students.remove(newStudent);
+    }
+
     public List<Student> getAllStudents(){
         return students;
 
@@ -27,9 +32,7 @@ public class StudentDB {
 
     @Override
     public String toString() {
-        return "StudentDB{" +
-                "students=" + students +
-                '}';
+        return students.toString();
     }
 }
 
